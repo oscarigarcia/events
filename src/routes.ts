@@ -1,3 +1,5 @@
+import { EventsCreateComponent } from './app/events/events-create/events-create.component';
+import { LoginComponent } from './app/user/login/login.component';
 import { Error404Component } from './errors/404.component';
 import { EventsRouterActivatorService } from './app/events/events-details/events-router-activator.service';
 import { Routes } from '@angular/router';
@@ -21,12 +23,15 @@ export const routes: Routes = [
     canActivate: [EventsRouterActivatorService],
   },
   {
-    path: '404',
-    component: Error404Component,
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path: 'events/new',
-    component: EventsDetailsComponent,
-    canDeactivate: ['canDeactivateCreateEvent'],
+    path: 'create',
+    component: EventsCreateComponent,
+  },
+  {
+    path: '404',
+    component: Error404Component,
   },
 ];
